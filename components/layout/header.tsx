@@ -6,7 +6,7 @@ type Props = {};
 
 export default function Header({}: Props) {
   return (
-    <header className="flex  justify-between items-center p-4 bg-gray-800 container">
+    <header className="flex  justify-between items-center py-4 bg-gray-800 container">
       <div className="flex items-center">
         <Link href="/">
           <Image
