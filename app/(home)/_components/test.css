@@ -1,0 +1,152 @@
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #cdcdcd;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.container-x {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.container-x.left {
+  left: 0;
+  padding-right: 60px;
+}
+
+.container-x.right {
+  left: 50%;
+  padding-left: 60px;
+}
+
+.container-x::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: calc(50% - 70px);
+  right: -24px;
+  background: #ffffff;
+  border: 2px solid #cdcdcd;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.container-x.right::after {
+  left: -24px;
+}
+
+.container-x.right::before {
+  left: 8px;
+}
+
+.container-x .date {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.container-x.left .date {
+  right: -205px;
+}
+
+.container-x.right .date {
+  left: -205px;
+}
+
+.container-x.left .icon {
+  right: 56px;
+}
+
+.container-x.right .icon {
+  left: 56px;
+}
+
+.container-x .content {
+  padding: 30px 90px 30px 30px;
+  position: relative;
+}
+
+.container-x.right .content {
+  padding: 30px 30px 30px 90px;
+}
+
+.container-x .content h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.container-x .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+
+  .container-x {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  .container-x.right {
+    left: 0%;
+  }
+
+  .container-x.left::after,
+  .container-x.right::after {
+    left: 82px;
+  }
+
+  .container-x.left::before,
+  .container-x.right::before {
+    left: 100px;
+    border-color: transparent #cdcdcd transparent transparent;
+  }
+
+  .container-x.left .date,
+  .container-x.right .date {
+    right: auto;
+    left: 15px;
+  }
+
+  .container-x.left .icon,
+  .container-x.right .icon {
+    right: auto;
+    left: 146px;
+  }
+
+  .container-x.left .content,
+  .container-x.right .content {
+    padding: 30px 30px 30px 90px;
+    border-radius: 500px 0 0 500px;
+  }
+}

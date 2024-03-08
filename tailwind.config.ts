@@ -112,7 +112,7 @@ const config: Config = {
       },
 
       boxShadow: {
-        primary: "0px 3px 3px rgba(16, 62, 117, 0.37)",
+        card: "0px -4px 2px 0px #CDCDCD",
       },
     },
   },

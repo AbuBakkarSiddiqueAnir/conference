@@ -16,43 +16,7 @@ async function getConferences() {
           name
           startDate
           endDate
-          organizers {
-            firstName
-            lastName
-            image {
-              url
-              style {
-                backgroundSize
-              }
-              url
-            }
-            location {
-              name
-              about
-              social {
-                homepage
-              }
-              country {
-                code
-              }
-            }
-          }
-          sponsors {
-            name
-            company
-            image {
-              url
-            }
-          }
-          partners {
-            firstName
-            lastName
-            name
-            about
-            image {
-              url
-            }
-          }
+          slogan
         }
       }
     `,
@@ -62,12 +26,10 @@ async function getConferences() {
 }
 
 export default async function Home() {
-  const conferences = await getConferences();
-  console.log(conferences);
   return (
     <main className="h-auto w-full">
       <Hero />
-      <Conferences />
+      <Conferences conferences={await getConferences()} />
     </main>
   );
 }
