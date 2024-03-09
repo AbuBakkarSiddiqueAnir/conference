@@ -35,9 +35,16 @@ async function getConference(id: string) {
             lastName
             image {
               title
+              url
             }
             about
             tagline
+            social{
+              twitter
+              github
+              linkedin
+              homepage
+            }
           }
           sponsors {
             firstName
@@ -59,6 +66,15 @@ async function getConference(id: string) {
             intervals {
               title
               drawing
+              begin
+              end
+              title
+              sessions{
+                title
+                description
+                begin
+                end
+              }
             }
           }
         }

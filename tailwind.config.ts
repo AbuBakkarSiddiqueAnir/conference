@@ -41,6 +41,7 @@ const config: Config = {
         secodary: "#111D5E",
         gray: "#617187",
         "light-gray": "#CDCDCD",
+        "dart-gray": "#F9FAFB",
       },
       fontSize: {
         "h-huge": [
