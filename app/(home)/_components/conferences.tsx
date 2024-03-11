@@ -1,9 +1,10 @@
 import React from "react";
-import "./test.css";
+import "./conferences.css";
 import clsx from "clsx";
 import { formatDate } from "@/utils";
 import Link from "next/link";
 import { Conference } from "@/types";
+import Image from "next/image";
 
 type Props = {
   conferences: Conference[];
@@ -19,17 +20,29 @@ export default function Conferences({ conferences }: Props) {
             return (
               <div
                 key={i}
-                className={clsx("container-x ", i % 2 === 0 ? "left" : "right")}
+                className={clsx(
+                  "container-x rounded-md ",
+                  i % 2 === 0 ? "left" : "right"
+                )}
               >
                 <div className="date text-gray">
                   {formatDate(conference.startDate)}
                 </div>
-                <i className="icon fa fa-home"></i>
-                <div className="content shadow-card bg-[#F9FAFB]">
-                  <Link href={`/conference/${conference.id}`}>
-                    <h2>{conference.name}</h2>
-                  </Link>
-                  <p>{conference.slogan}</p>
+                <div className="content shadow-extended  drop-shadow-extended rounded-md bg-[#F9FAFB] flex gap-4">
+                  <div>
+                    <Image
+                      src={"/Marker.svg"}
+                      height={24}
+                      width={24}
+                      alt="marker"
+                    />
+                  </div>
+                  <div>
+                    <Link href={`/conference/${conference.id}`}>
+                      <h2>{conference.name}</h2>
+                    </Link>
+                    <p>{conference.slogan}</p>
+                  </div>
                 </div>
               </div>
             );

@@ -11,7 +11,7 @@
   position: absolute;
   width: 2px;
   background: #cdcdcd;
-  top: 0;
+  top: 50px;
   bottom: 0;
   left: 50%;
   margin-left: -1px;
@@ -37,14 +37,19 @@
 .container-x::after {
   content: "";
   position: absolute;
+  background: #ffffff;
+
+  background-image: url("/storm.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
   width: 48px;
   height: 48px;
   top: calc(50% - 70px);
   right: -24px;
-  background: #ffffff;
   border: 2px solid #cdcdcd;
-  border-radius: 16px;
-  z-index: 1;
+  border-radius: 50%;
+  z-index: 10;
 }
 
 .container-x.right::after {
@@ -58,7 +63,7 @@
 .container-x .date {
   position: absolute;
   display: inline-block;
-  top: calc(50% - 8px);
+  top: calc(50% - 58px);
   text-align: center;
   font-size: 14px;
   font-weight: bold;
@@ -84,13 +89,8 @@
   left: 56px;
 }
 
-.container-x .content {
-  padding: 30px 90px 30px 30px;
-  position: relative;
-}
-
-.container-x.right .content {
-  padding: 30px 30px 30px 90px;
+.content {
+  padding: 30px;
 }
 
 .container-x .content h2 {

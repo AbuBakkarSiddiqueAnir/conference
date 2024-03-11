@@ -114,6 +114,10 @@ const config: Config = {
 
       boxShadow: {
         card: "0px -4px 2px 0px #CDCDCD",
+        extended: "0 11px 9px -4px rgb(0 0 0 / 0.1)",
+      },
+      dropShadow: {
+        extended: "0 -5px 0px rgb(0 0 0 / 0.1)",
       },
     },
   },
