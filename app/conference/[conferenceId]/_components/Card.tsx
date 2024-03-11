@@ -1,4 +1,5 @@
 import IconLink from "@/components/ui/icon-link";
+import clsx from "clsx";
 import Image from "next/image";
 import React from "react";
 const socialLinks = [
@@ -24,6 +25,7 @@ const socialLinks = [
   },
 ];
 type Props = {
+  socialLinksVisible?: boolean;
   card: {
     image: {
       url: string;
@@ -34,7 +36,7 @@ type Props = {
   };
 };
 
-export default function Card({ card }: Props) {
+export default function Card({ card, socialLinksVisible }: Props) {
   return (
     <article className=" w-full h-auto gap-x-3 flex px-4 py-6 bg-white shadow-lg">
       <div className="max-w-[8rem]">
@@ -45,7 +47,12 @@ export default function Card({ card }: Props) {
           <h3 className="text-[1.5rem]">
             {card.firstName} {card.lastName}
           </h3>
-          <ul className="flex gap-x-3 pr-4">
+          <ul
+            className={clsx(
+              "flex gap-x-3 pr-4",
+              !socialLinksVisible && "hidden"
+            )}
+          >
             {socialLinks.map((sl) => (
               <IconLink key={sl.id} media={sl} />
             ))}

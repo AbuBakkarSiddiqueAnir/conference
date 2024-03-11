@@ -1,7 +1,7 @@
 "use client";
 
 import { ConferenceType, TailoredConferenceType } from "@/types";
-import React, { ReactNode, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import ScheduleCard from "./ScheduleCard";
 import Sidebar from "./sidebar";
@@ -11,6 +11,8 @@ type Props = {
 };
 
 export default function Conference({ conference }: Props) {
+  const [currentTab, setCurrentTab] = useState<TailoredConferenceType>();
+
   const cf: TailoredConferenceType[] = [
     {
       id: "organizer",
@@ -21,7 +23,7 @@ export default function Conference({ conference }: Props) {
       id: "speakers",
       name: "Speakers",
       component: conference.speakers.map((con, i) => (
-        <Card key={i} card={con} />
+        <Card socialLinksVisible key={i} card={con} />
       )),
     },
     {
@@ -39,16 +41,27 @@ export default function Conference({ conference }: Props) {
       )),
     },
   ];
-  const [currentTab, setCurrentTab] = useState(cf[2]);
 
+  const handleCurrentTab = (tab: TailoredConferenceType) => setCurrentTab(tab);
+
+  useEffect(() => {
+    setCurrentTab(cf[0]);
+  }, []);
   return (
     <section className="container py-24">
       <h1 className="text-h-large mb-4">{conference.name}</h1>
       <p className="text-body-3">{conference.slogan}</p>
       <div className="w-full flex gap-x-12 mt-[52px]">
-        <Sidebar cf={cf} />
+        {currentTab && (
+          <Sidebar
+            currentTab={currentTab}
+            cf={cf}
+            handleCurrentTab={handleCurrentTab}
+          />
+        )}
+
         <div className="w-[75%] bg-dart-gray flex flex-col gap-6 px-10 py-10 max-h-[32rem] overflow-y-auto">
-          {currentTab.component}
+          {currentTab && currentTab.component}
         </div>
       </div>
     </section>

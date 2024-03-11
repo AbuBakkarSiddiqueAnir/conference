@@ -37,7 +37,7 @@ export default function Navbar({}: Props) {
         <Link href="/what-we-do">What we do</Link>
         <Link href="/our-work">Our work</Link>
         <Link href="/blog">Blog</Link>
-        <Link href="say-hi">Say hi</Link>
+        <Link href="/say-hi">Say hi</Link>
       </menu>
       <MobileNav setIsOpen={setIsOpen} isOpen={isOpen} />
       <div>
