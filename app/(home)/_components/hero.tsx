@@ -1,4 +1,4 @@
-import Header from "@/components/layout/header";
+import Navbar from "@/components/layout/navbar";
 import Image from "next/image";
 import React from "react";
 
@@ -7,7 +7,7 @@ type Props = {};
 export default function Hero({}: Props) {
   return (
     <div className="max-w-[1500px] mx-auto h-screen relative">
-      <Header />
+      <Navbar />
       <div className="rounded-[25rem] w-[25rem] h-[25rem] opacity-40 bg-[#BE229C] blur-[250px] -z-10 absolute top-0 -right-[20%]">
         dd
       </div>

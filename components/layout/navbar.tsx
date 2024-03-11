@@ -4,9 +4,9 @@ import React from "react";
 
 type Props = {};
 
-export default function Header({}: Props) {
+export default function Navbar({}: Props) {
   return (
-    <header className="flex  justify-between items-center py-4 bg-gray-800 container">
+    <nav className="flex  justify-between items-center py-4 bg-gray-800 container">
       <div className="flex items-center">
         <Link href="/">
           <Image
@@ -28,6 +28,6 @@ export default function Header({}: Props) {
       <div>
         <button className="">Button</button>
       </div>
-    </header>
+    </nav>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import Conference from "./_components/conference";
-import Header from "@/components/layout/header";
+import Navbar from "@/components/layout/navbar";
 
 type Props = {
   params: {
@@ -89,7 +89,7 @@ export default async function page({ params }: Props) {
   const conference = await getConference(params.conferenceId);
   return (
     <main className="h-auto w-full">
-      <Header />
+      <Navbar />
       <Conference conference={conference} />
     </main>
   );
