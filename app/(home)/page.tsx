@@ -30,7 +30,7 @@ export default async function Home() {
   return (
     <main className="h-auto w-full">
       <Hero />
-      <Conferences conferences={await getConferences()} />
+      {/* <Conferences conferences={await getConferences()} /> */}
       <Sponsors />
     </main>
   );

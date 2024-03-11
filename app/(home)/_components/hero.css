@@ -3,7 +3,16 @@
   grid-template-areas:
     "hero-text hero-text hero-image-2"
     "hero-image-1 hero-content hero-image-2";
-  /* height: 80vh; */
+}
+
+@media (max-width: 1020px) {
+  .hero-container {
+    grid-template-areas:
+      "hero-text "
+      "hero-content"
+      "hero-image-2"
+      "hero-image-1";
+  }
 }
 
 .hero-text {

@@ -1,13 +1,27 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import MobileNav from "./MobileNav";
 
 type Props = {};
 
 export default function Navbar({}: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMobileMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
+
   return (
-    <nav className="flex  justify-between items-center py-4 bg-gray-800 container">
-      <div className="flex items-center sm:max-w-[8rem] max-w-[4rem]">
+    <nav className="flex  justify-between items-center py-4 bg-gray-800 max-w-[1320px] ">
+      <div className="flex items-center sm:max-w-[8rem] max-w-[6rem]">
         <Link href="/">
           <Image
             src="/logo/logo.svg"
@@ -18,15 +32,23 @@ export default function Navbar({}: Props) {
           />
         </Link>
       </div>
-      <menu className="flex space-x-14">
+      <menu className="lg:flex space-x-14 hidden">
         <Link href="/about-us">About us</Link>
         <Link href="/what-we-do">What we do</Link>
         <Link href="/our-work">Our work</Link>
         <Link href="/blog">Blog</Link>
         <Link href="say-hi">Say hi</Link>
       </menu>
+      <MobileNav setIsOpen={setIsOpen} isOpen={isOpen} />
       <div>
-        <button className="">Button</button>
+        <button onClick={toggleMobileMenu} className="">
+          <Image
+            src={"/hamburgar.svg"}
+            width={24}
+            height={24}
+            alt="hamburgar menu"
+          />
+        </button>
       </div>
     </nav>
   );

@@ -10,7 +10,7 @@ export type Sponsor = {
 
 export default function Sponsors({}: Props) {
   return (
-    <section className="w-full h-auto py-24 bg-gray/10">
+    <section className="w-full h-auto py-14 md:py-24 bg-gray/10">
       <h2 className="text-center text-h-large mb-8">Our Sponsors</h2>
       <div className="w-full">
         <Row
