@@ -8,7 +8,7 @@ type Props = {};
 
 export default function Hero({}: Props) {
   return (
-    <div className="max-w-[1500px] mx-auto min-h-screen relative">
+    <div className="max-w-[1500px] mx-auto min-h-screen relative px-5">
       <Navbar />
       <div className="rounded-[25rem] w-[25rem] h-[25rem] opacity-40 bg-[#BE229C] blur-[250px] -z-10 absolute top-0 -right-[20%]"></div>
       <div className="background-image">

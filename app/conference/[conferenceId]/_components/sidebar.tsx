@@ -1,13 +1,13 @@
-import { Conference } from "@/types";
+import { TailoredConferenceType } from "@/types";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type Props = {
-  cf: Conference[];
+  cf: TailoredConferenceType[];
 };
 
 const Sidebar: React.FC<Props> = ({ cf }) => {
-  const containerRef = useRef<HTMLElement>(null);
+  // const containerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // Initialize sortables
@@ -19,7 +19,7 @@ const Sidebar: React.FC<Props> = ({ cf }) => {
   return (
     <aside className="w-[25%] min-w-[300px]">
       <ul
-        ref={containerRef}
+        // ref={containerRef}
         className="w-full flex flex-col gap-y-6 max-h-[384px]"
       >
         {cf.map((conference, index) => (

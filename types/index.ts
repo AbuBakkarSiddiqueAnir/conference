@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 type Speaker = {
   __typename: string;
   firstName: string;
@@ -24,7 +26,14 @@ type Schedule = {
   description: string;
   intervals: [];
 };
-export type Conference = {
+
+export type TailoredConferenceType = {
+  id: string;
+  name: string;
+  component: ReactNode;
+};
+
+export type ConferenceType = {
   id: string;
   name: string;
   _typename: string;

@@ -3,16 +3,16 @@ import "./conferences.css";
 import clsx from "clsx";
 import { formatDate } from "@/utils";
 import Link from "next/link";
-import { Conference } from "@/types";
+import { ConferenceType } from "@/types";
 import Image from "next/image";
 
 type Props = {
-  conferences: Conference[];
+  conferences: ConferenceType[];
 };
 
 export default function Conferences({ conferences }: Props) {
   return (
-    <section className="w-full  mt-32 pb-10 md:pb-24">
+    <section className="w-full  mt-32 pb-10 md:pb-24 px-5">
       <h2 className="text-center text-h-large mb-8">Conferences</h2>
       <div className="max-w-[70rem] mx-auto">
         <div className="timeline relative w-full max-w-[1140px]  py-4 px-0 space-y-[60px]">

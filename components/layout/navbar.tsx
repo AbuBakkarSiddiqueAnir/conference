@@ -20,7 +20,7 @@ export default function Navbar({}: Props) {
   });
 
   return (
-    <nav className="flex  justify-between items-center py-4 bg-gray-800 max-w-[1320px] ">
+    <nav className="flex  justify-between items-center py-4 bg-gray-800 max-w-[1320px] mx-auto">
       <div className="flex items-center sm:max-w-[8rem] max-w-[6rem]">
         <Link href="/">
           <Image
