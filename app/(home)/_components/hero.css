@@ -1,0 +1,24 @@
+.hero-container {
+  display: grid;
+  grid-template-areas:
+    "hero-text hero-text hero-image-2"
+    "hero-image-1 hero-content hero-image-2";
+  /* height: 80vh; */
+}
+
+.hero-text {
+  grid-area: hero-text;
+}
+.hero-image-1 {
+  grid-area: hero-image-1;
+}
+.hero-image-2 {
+  grid-area: hero-image-2;
+}
+.hero-content {
+  grid-area: hero-content;
+}
+
+.vertical-lr {
+  writing-mode: vertical-lr;
+}
