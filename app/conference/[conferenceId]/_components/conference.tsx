@@ -4,6 +4,7 @@ import { Conference } from "@/types";
 import React, { useState } from "react";
 import Card from "./Card";
 import ScheduleCard from "./ScheduleCard";
+import Sidebar from "./sidebar";
 
 type Props = {
   conference: Conference;
@@ -45,9 +46,9 @@ export default function Conference({ conference }: Props) {
     <section className="container py-24">
       <h1 className="text-h-large mb-4">{conference.name}</h1>
       <p className="text-body-3">{conference.slogan}</p>
-      <div className="w-full flex">
-        <aside className="w-[365px]">s</aside>
-        <div className="w-full bg-dart-gray flex flex-col gap-6 px-10 py-10 max-h-[32rem] overflow-y-auto">
+      <div className="w-full flex gap-x-12 mt-[52px]">
+        <Sidebar cf={cf} />
+        <div className="w-[75%] bg-dart-gray flex flex-col gap-6 px-10 py-10 max-h-[32rem] overflow-y-auto">
           {currentTab.compoent}
         </div>
       </div>

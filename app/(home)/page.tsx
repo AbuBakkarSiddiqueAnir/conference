@@ -1,6 +1,7 @@
 import Conferences from "./_components/conferences";
 import Hero from "./_components/hero";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import Sponsors from "./_components/sponsors";
 
 async function getConferences() {
   const client = new ApolloClient({
@@ -30,6 +31,7 @@ export default async function Home() {
     <main className="h-auto w-full">
       <Hero />
       <Conferences conferences={await getConferences()} />
+      <Sponsors />
     </main>
   );
 }

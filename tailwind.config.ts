@@ -93,7 +93,7 @@ const config: Config = {
           },
         ],
         "body-fixed-2": [
-          "0.075rem",
+          "0.75rem",
           {
             lineHeight: "100%",
             fontWeight: "400",
