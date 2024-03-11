@@ -12,10 +12,10 @@ export default function Navbar({}: Props) {
   const toggleMobileMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
+    if (isOpen && window.innerWidth < 768) {
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "auto";
     }
   });
 
