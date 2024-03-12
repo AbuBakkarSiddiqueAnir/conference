@@ -1,0 +1,27 @@
+.conference {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background: white;
+  transition: transform 200ms;
+}
+.conference.is-active {
+  transform: translateY(-3px);
+}
+.conference:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: -1;
+  border-radius: 30px;
+  opacity: 0;
+  transition: opacity 200ms;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+.conference.is-active:before {
+  opacity: 1;
+}

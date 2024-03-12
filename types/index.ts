@@ -52,3 +52,18 @@ export type ConferenceType = {
   sponsors: Sponsor[];
   schedules: Schedule[];
 };
+export interface ItemRef {
+  current: HTMLDivElement | null;
+}
+
+export interface Item {
+  index: number;
+  dom: HTMLDivElement;
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+  x: number;
+  y: number;
+  dragged: boolean;
+}
