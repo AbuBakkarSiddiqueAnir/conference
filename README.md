@@ -1,6 +1,4 @@
-# Project Name
-
-## React Conference Finland
+# React Conference Finland
 
 ## Techs
 
