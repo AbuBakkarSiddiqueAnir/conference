@@ -1,7 +1,8 @@
 import React from "react";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 import Conference from "./_components/conference";
 import Navbar from "@/components/layout/navbar";
+import { client } from "@/apollo-client";
 
 type Props = {
   params: {
@@ -10,10 +11,6 @@ type Props = {
 };
 
 async function getConference(id: string) {
-  const client = new ApolloClient({
-    uri: process.env.REACT_CONFERENCE_API_ENDPOINT,
-    cache: new InMemoryCache(),
-  });
   const { data } = await client.query({
     query: gql`
       query {

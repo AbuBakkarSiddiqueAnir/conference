@@ -1,14 +1,10 @@
 import Conferences from "./_components/conferences";
 import Hero from "./_components/hero";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 import Sponsors from "./_components/sponsors";
+import { client } from "@/apollo-client";
 
 async function getConferences() {
-  const client = new ApolloClient({
-    uri: process.env.REACT_CONFERENCE_API_ENDPOINT,
-    cache: new InMemoryCache(),
-  });
-
   const { data } = await client.query({
     query: gql`
       query {
