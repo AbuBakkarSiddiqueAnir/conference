@@ -88,7 +88,7 @@ async function getConference(id: string) {
 export default async function page({ params }: Props) {
   const conference = await getConference(params.conferenceId);
   return (
-    <main className="h-auto w-full">
+    <main className="h-auto w-full px-5">
       <Navbar />
       <Conference conference={conference} />
     </main>

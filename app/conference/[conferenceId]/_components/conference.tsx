@@ -48,10 +48,10 @@ export default function Conference({ conference }: Props) {
     setCurrentTab(cf[0]);
   }, []);
   return (
-    <section className="container py-24">
+    <section className="container py-12 md:py-24">
       <h1 className="text-h-large mb-4">{conference.name}</h1>
       <p className="text-body-3">{conference.slogan}</p>
-      <div className="w-full flex gap-x-12 mt-[52px]">
+      <div className="w-full flex md:flex-row flex-col gap-x-12 mt-[52px]">
         {currentTab && (
           <Sidebar
             currentTab={currentTab}
@@ -60,7 +60,7 @@ export default function Conference({ conference }: Props) {
           />
         )}
 
-        <div className="w-[75%] bg-dart-gray flex flex-col gap-6 px-10 py-10 max-h-[32rem] overflow-y-auto">
+        <div className="w-full md:w-[75%] bg-dart-gray flex flex-col gap-6 px-3 lg:px-10 py-10 max-h-[32rem] overflow-y-auto">
           {currentTab && currentTab.component}
         </div>
       </div>
