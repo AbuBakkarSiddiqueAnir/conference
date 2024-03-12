@@ -38,18 +38,18 @@ type Props = {
 
 export default function Card({ card, socialLinksVisible }: Props) {
   return (
-    <article className=" w-full h-auto gap-x-8 flex px-4 py-6 bg-white shadow-sm rounded-sm">
+    <article className=" w-full h-auto gap-x-4 lg:gap-x-8 flex px-4 py-6 bg-white shadow-sm rounded-sm">
       <div className="max-w-[8rem]">
         <Image src={card.image.url} width={140} height={140} alt={card.about} />
       </div>
       <div className="flex w-full justify-center flex-col items-start gap-2">
         <div className="w-full flex justify-between">
-          <h3 className="text-[1.5rem]">
+          <h3 className="text-[1.1rem] lg:text-[1.5rem]">
             {card.firstName} {card.lastName}
           </h3>
           <ul
             className={clsx(
-              "flex gap-x-3 pr-4",
+              "flex gap-x-1 lg:gap-x-3 pr-2 lg:pr-4",
               !socialLinksVisible && "hidden"
             )}
           >
