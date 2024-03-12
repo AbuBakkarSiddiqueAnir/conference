@@ -38,7 +38,7 @@ type Props = {
 
 export default function Card({ card, socialLinksVisible }: Props) {
   return (
-    <article className=" w-full h-auto gap-x-3 flex px-4 py-6 bg-white shadow-lg">
+    <article className=" w-full h-auto gap-x-8 flex px-4 py-6 bg-white shadow-sm rounded-sm">
       <div className="max-w-[8rem]">
         <Image src={card.image.url} width={140} height={140} alt={card.about} />
       </div>

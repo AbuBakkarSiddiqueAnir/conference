@@ -317,7 +317,7 @@ export default function Sidebar({
         onClick={() => handleCurrentTab(conference)}
         className={clsx(
           "bg-inherit rounded-sm flex gap-x-6 p-2 flex-start w-full h-full items-center",
-          conference.id === currentTab.id ? "bg-primary" : ""
+          conference.id === currentTab.id ? "bg-primary shadow-xl" : ""
         )}
       >
         <div className="p-4 rounded-sm bg-white">

@@ -1,44 +1,34 @@
+import { Interval } from "@/types";
 import React from "react";
 
-type Session = {
-  begin: string;
-  description: string;
-  end: string;
-  title: string;
-};
-type Interval = {
-  begin: string;
-  end: string;
-  sessions: Session[];
-};
-type Props = {
+interface Props {
   card: {
     day: string;
     description: string;
     intervals: Interval[];
   };
-};
+}
 
 export default function ScheduleCard({ card }: Props) {
   return (
-    <article className="px-6 py-4 bg-white shadow-lg">
+    <article className="px-6 py-4 bg-white shadow-sm rounded-sm">
       <div className="w-full flex justify-between mb-4">
-        <h3 className="text-[1.5rem]">{card.day}</h3>
+        <h3 className="text-[1.5rem] font-bold">{card.day}</h3>
         <span className="text-body-2">{card.description}</span>
       </div>
-      <div className="flex flex-col gap-y-3">
+      <div className="flex flex-col gap-y-3 text-[1rem]">
         {card.intervals.map((interval, i) => (
           <div key={i}>
-            <h5 className="text-body-1 mb-2">
-              Duration :{interval.begin}-{interval.end}
+            <h5 className=" mb-1">
+              Duration : {interval.begin} - {interval.end}
             </h5>
-            <ol>
+            <ul className="list-disc">
               {interval.sessions.map((ss) => (
-                <li className="text-[0.9rem] mb-1" key={ss.title}>
+                <li className="text-[0.9rem] ml-6 mb-1" key={ss.title}>
                   {ss.title}
                 </li>
               ))}
-            </ol>
+            </ul>
           </div>
         ))}
       </div>

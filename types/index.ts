@@ -67,3 +67,15 @@ export interface Item {
   y: number;
   dragged: boolean;
 }
+
+export type Session = {
+  begin: string;
+  description: string;
+  end: string;
+  title: string;
+};
+export type Interval = {
+  begin: string;
+  end: string;
+  sessions: Session[];
+};
